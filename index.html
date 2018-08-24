@@ -5,13 +5,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pranav Mujumdar</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/scripts/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
 	<div class="row">
-		<div class="col-lg-2 col-md-2 col-sm-2" >
+		<div class="col-lg-2 col-md-2 col-sm-2 removegridmargins" >
 			<nav class="navbar-default navbar-fixed-top">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse" aria-expanded="false" style="margin-right: 45%";>
 			        <span class="sr-only">Toggle navigation</span>
@@ -24,33 +27,49 @@
 				    <div class="collapse navbar-collapse" id="sidebar-collapse">
 						  <ul>
 						  	<a href="#">PM</a>
-						    <li><a href="#">About Me</a></li>
-						    <li><a href="#">Skills</a></li>
+						    <li><a href="#about">About Me</a></li>
+						    <li><a href="#skills">Skills</a></li>
 						    <li><a href="#">Interests</a></li>
 						    <li><a href="#">Portfoilo</a></li>
+						    <li><a href="#">Contact Me</a></li>
 						  </ul>
 						</div>
 					</div>
 			
 		</div>
 		
-		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-			<div id="rightcanvas">
-	      <h1>Pranav Mujumdar</h1>
-				<h3>Full stack web developer</h3>
-				<h4>Who am I</h4>
-				<p>I am a full stack web developer, working on MEAN stack (MongoDB, Express, Angular, NodeJs, currently learning android application development.</p>
-				<h4>Why</h4>
-				<p>I like creating things, i like to lose sleep over things, besides you meet people who help you make things better</p>
-				<h4>Skills</h4>
-				<p>HTML, CSS, JavaScript, jQuery, Node.js, Express Framework, MongoDB(Nosql DB), git version control</p>
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 removegridmargins">
+			
+				<section  id="about">
+					<div class="container">
+						<h1>Pranav Mujumdar</h1>
+						<hr>
+						<h3>
+						  <a href="" class="typewrite" data-period="2000" data-type='[ "Web Developer", "Engineer", "Former Baby!", "Learner" ]'>
+						    <span class="wrap"></span>
+						  </a>
+						</h3>	
+						<!-- <h3>Full stack web developer</h3> -->
+						<div>
+							<h4>About Me</h4>
+							<p>I am a freelance full stack web developer, working on MEAN stack (MongoDB, Express, Angular, NodeJs). I started learning software development in 2014, when I worked for Infosys Ltd., My quest for being a digital nomad began with learning how to develop front end websites, gradually I learnt how to create good landing pages and single page applications for marketers. Afterwards I learned how to create a reliable backend using Node.JS, express framework and MongoDB. I'm currently learning android development.</p>
+							<h4>Why do i do this</h4>
+							<p>I feels great to lose sleep over creating something. The only way I learn is by knowing what i want to do but not knowing how to do it.</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h4 id="skills">Technical Skills</h4>
+					<p>HTML, CSS, JavaScript, jQuery, Node.js, Express Framework, MongoDB(Nosql DB), git version control</p>
+					<h4></h4>
+				</section>
 				<h4>Work Experience</h4>
 				<p>Oct 2014 - Nov 2016</p>
 				<h5>Infosys Ltd. Bengaluru</h5>
 				<p>System Engineer</p>
 				<h4>Education</h4>
 				<p>Bachelor in Mechanical Egineering</p>
-		  </div>
+		  
 		</div>
 	</div>
 
@@ -59,7 +78,6 @@
 	<!-- Instagram -->
 
 	<!--  -->
-
 
 
 
