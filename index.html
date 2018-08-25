@@ -13,19 +13,20 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
-	<div class="row">
-		<div class="col-lg-2 col-md-2 col-sm-2 removegridmargins" >
-			<nav class="navbar-default navbar-fixed-top">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse" aria-expanded="false" style="margin-right: 45%";>
+		<nav class="">
+			<div id="toggleMain"class="col-lg-2 col-md-2 col-sm-2 removegridmargins" >
+				<div id="toggleContainer" class="">
+					<div id="toggleNavbarHeader"class="">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" style="margin-right: 45%";>
 			        <span class="sr-only">Toggle navigation</span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			</nav>   
-			    <div id="sidebar-div">
-				    <div class="collapse navbar-collapse" id="sidebar-collapse">
-						  <ul>
+			  	</div>
+			    <div id="toggleSidebarDiv"class="sidebar-div">
+				    <div class="collapse navbar-collapse">
+						  <ul class="">
 						  	<a href="#">PM</a>
 						    <li><a href="#about">About Me</a></li>
 						    <li><a href="#skills">Skills</a></li>
@@ -35,12 +36,14 @@
 						  </ul>
 						</div>
 					</div>
-			
-		</div>
+				</div>
+			</div>
+		</nav> 
+		
 		
 		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 removegridmargins">
 			
-				<section  id="about">
+				<section id="about">
 					<div class="container">
 						<h1>Pranav Mujumdar</h1>
 						<hr>
@@ -80,8 +83,7 @@
 	<!--  -->
 
 
-
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
 </body>
 </html>
