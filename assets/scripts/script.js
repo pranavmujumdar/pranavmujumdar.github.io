@@ -1,3 +1,4 @@
+// Type animation script
 var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -122,3 +123,10 @@ $(function() {
   });
 });
 
+//parallax 
+$(window).scroll(function(){
+    var wScroll = $(this).scrollTop();
+    $('.landingcontent').css({
+        'transform':'translate(0px , '+wScroll/2+'%)'
+    });
+});

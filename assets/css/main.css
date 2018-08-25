@@ -76,15 +76,18 @@ html, body{
     }
 }
 
-#about{
+#landing{
 	color: white;
-	/*overflow-x: hidden;*/
+	overflow: hidden;
 	background-image: url('../images/about.jpg');
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
 	background-attachment: fixed;
 	opacity: 0.8;
+}
+.landingcontent{
+	/*overflow: hidden;*/
 }
 h1{
 	text-align: center;
@@ -104,8 +107,18 @@ h1{
 .links a i{
 	font-size: 3em;
 	padding: 10px 10px;
+	color: lightgrey;
 }
-
+.links a:hover i{
+	color: white;
+}
+.aboutDiv{
+	position: relative;
+	/*background-color: pink;*/
+	top:10vh;
+	max-height: 50%
+	font-size: 1.1vw;
+}
 h3{
 	text-align: center;
 	text-shadow: 1px 1px 8px #565353;
