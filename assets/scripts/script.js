@@ -90,6 +90,7 @@ $('a[href*="#"]')
 
 var width=$(window).width();
 
+
 function navbarfunc(width){
     if(width<768){
         $("div[id=toggleRow]").removeClass("row");
@@ -99,6 +100,7 @@ function navbarfunc(width){
         $("ul").addClass("navbar navbar-nav");
         $("nav").addClass("navbar navbar-default navbar-fixed-top");
         $("div[id=toggleNavbarHeader]").addClass("navbar-header");
+        $("svg").remove(".pointer");
     } else if(width>767){
         $("div[id=toggleRow]").addClass("row");
         $("div[id=toggleMain]").addClass("col-lg-2 col-md-2 col-sm-2 removegridmargins");
