@@ -56,10 +56,13 @@ var TxtType = function(el, toRotate, period) {
     };
 
 //close navbar on clicking
-$('.navbar-collapse').click(function(){
+// $('.navbar-collapse').click(function(){
+//     $(".navbar-collapse").removeClass("in");
+//     $(".navbar-collapse").attr("aria-expanded", "false");
+// });
+$('.navbar-collapse a').click(function(){
     $(".navbar-collapse").collapse('hide');
 });
-
 
 //smoothScrolling
 // Select all links with hashes
