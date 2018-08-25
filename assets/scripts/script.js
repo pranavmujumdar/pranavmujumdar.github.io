@@ -93,7 +93,7 @@ var width=$(window).width();
 
 function navbarfunc(width){
     if(width<768){
-        $("div[id=toggleRow]").removeClass("row");
+        // $("div[id=toggleRow]").removeClass("row");
         $("div[id=toggleMain]").removeClass("col-lg-2 col-md-2 col-sm-2 removegridmargins");
         $("div[id=toggleSidebarDiv]").removeClass("sidebar-div");
         $("div[id=toggleContainer]").addClass("container");
@@ -103,7 +103,7 @@ function navbarfunc(width){
         $("svg").remove(".pointer");
         $("a").remove("#logo");
     } else if(width>767){
-        $("div[id=toggleRow]").addClass("row");
+        // $("div[id=toggleRow]").addClass("row");
         $("div[id=toggleMain]").addClass("col-lg-2 col-md-2 col-sm-2 removegridmargins");
         $("div[id=toggleSidebarDiv]").addClass("sidebar-div");
         $("div[id=toggleContainer]").removeClass("container");
