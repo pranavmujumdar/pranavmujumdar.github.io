@@ -101,6 +101,7 @@ function navbarfunc(width){
         $("nav").addClass("navbar navbar-default navbar-fixed-top");
         $("div[id=toggleNavbarHeader]").addClass("navbar-header");
         $("svg").remove(".pointer");
+        $("a").remove("#logo");
     } else if(width>767){
         $("div[id=toggleRow]").addClass("row");
         $("div[id=toggleMain]").addClass("col-lg-2 col-md-2 col-sm-2 removegridmargins");
