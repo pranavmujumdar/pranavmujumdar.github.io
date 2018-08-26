@@ -97,11 +97,15 @@ h1{
 					0px 0px 20px rgba(0,0,0,0.2);
 }
 .links{
+	/*background-color: pink;*/
 	text-align: center;
 	position: absolute;
+	/*margin: 0 auto;*/
+	/*padding: 0 auto;*/
 	/*top:40vh;*/
-	left:46%;
-	z-index: 1;
+	left:50%;
+	width: 300px;
+	margin-left: -150px;
 }
 .links a i{
 	font-size: 3em;
