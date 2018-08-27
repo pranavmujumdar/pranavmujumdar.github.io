@@ -44,6 +44,7 @@ html, body{
     	font-size: 3.5em;
     	padding-bottom: 15vh;
     	display: block;
+    	letter-spacing: -5px;
     }
     ul li{
     	margin-bottom: 10px;
@@ -117,12 +118,16 @@ h1{
 	text-shadow: 1px 0px 8px rgba(0,0,0,0.3),
 						0px 0 1px rgba(0,0,0,0.2);
 }
-.aboutDiv{
-	position: relative;
-	/*background-color: pink;*/
+.aboutPage{
+	/*position: relative;
+	background-color: pink;
 	top:10vh;
 	max-height: 50%
-	font-size: 1.1vw;
+	font-size: 1.1vw;*/
+	padding-top: 3%;
+}
+.innerHeading{
+	font-size: 3em;
 }
 h3{
 	text-align: center;
@@ -148,4 +153,25 @@ a{
 a:hover{
 	text-decoration: none;
 	color: white;
+}
+.portfolioPage{
+	padding-top: 50px;
+}
+.portfolioWebsiteThumb{
+	/*width:427px;*/
+	width:30vw;
+	height:30vh;
+	min-width: 200px;
+	min-height: 113px;
+	overflow: hidden;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../images/WebsiteDisplayThumb.jpg');
+	border-radius: 10px;
+	box-shadow:  0px 25px 15px -10px rgba(0,0,0,0.5);
+	transition: all ease-in-out 400ms;
+}
+.portfolioWebsiteThumb:hover{
+	box-shadow:  0px 35px 30px -20px rgba(0,0,0,0.5);
 }
