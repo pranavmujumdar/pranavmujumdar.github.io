@@ -94,7 +94,6 @@ $('a[href*="#"]')
 
 var width=$(window).width();
 
-
 // function navbarfunc(width){
 //     if(width<768){
 //         // $("div[id=toggleRow]").removeClass("row");
@@ -116,26 +115,47 @@ var width=$(window).width();
 //         $("div[id=toggleNavbarHeader]").removeClass("navbar-header");
 //     }  
 // }
-// $(function() {
-//   navbarfunc($(this).width());
-//   $(window).resize(function() {
-//     navbarfunc($(this).width());
-//   });
-// });
 
 
-//parallax 
-$(window).scroll(function(){
-    var wScroll = $(this).scrollTop();
-    $('.landingcontent').css({
-        'transform':'translate(0px , '+wScroll/2+'%)'
+function mobileNavbar(width){
+  if(width > 960){
+    $(window).scroll(parallax);
+    $(window).scroll(navbarScrolling);
+  } else{
+    $('.burgerspan').css({
+      'padding-left': '5vw'
     });
-    if (wScroll >= 100) {
+    $('.site-title').css({
+      'margin-left': '7vw',
+      'margin-right': '10vw'
+    });
+    $('.contact-me').css({
+      'margin-left': '5vw',
+      // 'margin-right': '5vw'
+    });
+    $(window).scroll(navbarScrolling);
+  }
+}
+$(function() {
+  mobileNavbar($(this).width());
+  $(window).resize(function() {
+    mobileNavbar($(this).width());
+  });
+});
+
+// //parallax 
+
+
+var vwHeight = $(window).height();
+
+function navbarScrolling(){
+  var wScroll = $(this).scrollTop();
+  if (wScroll >= vwHeight*0.1265) {
       $('.myburger').addClass('sticky');
     } else {
         $('.myburger').removeClass('sticky');
     }
-    if(wScroll >= 600){
+    if(wScroll >= vwHeight*0.7594){
       $('.site-title').css({
         'visibility':'visible'
       }); 
@@ -144,7 +164,7 @@ $(window).scroll(function(){
           'visibility':'hidden'
         });
       };
-    if(wScroll >= 400){
+    if(wScroll >= vwHeight*0.50){
       $('.contact-me').css({
         'visibility':'visible'
       });
@@ -153,9 +173,14 @@ $(window).scroll(function(){
       'visibility':'hidden'
     });
   } 
-});
+}
 
-
+function parallax(){
+  var wScroll = $(this).scrollTop();
+  $('.landingcontent').css({
+    'transform':'translate(0px , '+wScroll/2+'%)'
+  });
+}
 
 
 function openNav() {

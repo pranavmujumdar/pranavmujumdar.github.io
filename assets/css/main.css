@@ -41,12 +41,12 @@ html, body{
     font-size: 36px;
     margin-left: 50px;
 }
+
 .burgerspan{
 	padding-left: 20vw;
 	font-size:30px;
 	cursor:pointer;
 }
-
 .myburger{
 	display: inline-block;
 	top: 12.65vh;
@@ -71,7 +71,7 @@ html, body{
 	visibility: hidden;
 	transition: 0.2s ease-in;
 }
-.contact-me{
+.contact-me{ 
 	display: inline-block;
 	font-size: 1.5em;
 	visibility: hidden;
@@ -82,6 +82,7 @@ html, body{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
 #logo{
 	position: relative;
 	font-size: 100px;
