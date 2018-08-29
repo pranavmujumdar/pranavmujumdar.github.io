@@ -9,13 +9,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="assets/scripts/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
-	<div class="">
+<!-- 	<div class="">
 		<div id="toggleMain"class="col-lg-2 col-md-2 col-sm-2 removegridmargins" >
 		<nav class="">
 			<div id="toggleContainer" class="">
@@ -33,24 +33,51 @@
 						  	<a href="#about" id="logo">pM.</a>
 						    <li><a href="#about">About Me</a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
 						    </li>
-						    <li><a href="#skills">Skills</a></a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
+						    <li><a href="#skills">Skills</a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
 						    </li>
-						    <li><a href="#interests">Portfolio</a></a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
+						    <li><a href="#interests">Portfolio</a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
 						    </li>
-						    <li><a href="#portfolio">Interests</a></a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
+						    <li><a href="#portfolio">Interests</a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
 						    </li>
-						    <li><a href="#contact">Contact Me</a></a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
+						    <li><a href="#contact">Contact Me</a><svg viewbox="0 0 20 20" class="pointer"><path d="M0 0 L10 10 L0 20"></path></svg>
 						    </li>
 						  </ul>
 						</div>
 					</div>
 				</div>
 			</nav> 
-		</div>
+		</div> -->
 
-	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 container removegridmargins">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 removegridmargins">
 		<section id="landing">
+			<div class="myburger">
+					<span class="burgerspan" onclick="openNav()">&#9776;</span>
+					<div class="site-title">Pranav Mujumdar</div>
+					<div class="contact-me"><i class="fab fa-linkedin"></i></div>
+				</div>
 			<div class="container">
+				<div id="mySidenav" class="sidenav">
+					<ul class="">
+					 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				  	<a href="#about" id="logo" onclick="closeNav()">pM.</a>
+				    <li><a href="#about" onclick="closeNav()">About Me</a>
+				    </li>
+				    <li><a href="#skills" onclick="closeNav()">Skills</a>
+				    </li>
+				    <li><a href="#interests" onclick="closeNav()">Portfolio</a>
+				    </li>
+				    <li><a href="#portfolio" onclick="closeNav()">Interests</a>
+				    </li>
+				    <li><a href="#contact" onclick="closeNav()">Contact Me</a>
+				    </li>
+						</ul>
+		<!-- 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				  <a href="#">About</a>
+				  <a href="#">Services</a>
+				  <a href="#">Clients</a>
+				  <a href="#">Contact</a> -->
+				</div>
+
 				<div class="landingcontent">
 					<h1>Pranav Mujumdar</h1>
 					<hr>
@@ -66,7 +93,7 @@
 			</div>
 		</section>		
 					<!-- <h3>Full stack web developer</h3> -->
-		<div class="col-md-10 col-md-offset-1 aboutPage">
+		<div class="col-md-8 col-md-offset-2 aboutPage">
 			<div class="col-md-6" id="about">
 				<h4 class="innerHeading">About Me</h4>
 				<p>I am a freelance full stack web developer, working on MEAN stack (MongoDB, Express, Angular, NodeJs). I started learning software development in 2014, when I worked for Infosys Ltd., My quest for being a digital nomad began with learning how to develop front end websites, gradually I learnt how to create good landing pages and single page applications for marketers. Afterwards I learned how to create a reliable backend using Node.JS, express framework and MongoDB. I'm currently learning android development.</p>
@@ -78,7 +105,7 @@
 				<p>HTML, CSS, JavaScript, jQuery, Node.js, Express Framework, MongoDB(Nosql DB), git version control</p>
 			</div>
 		</div>
-		<div class="col-md-10 col-md-offset-1 portfolioPage" >
+		<div class="col-md-8 col-md-offset-2 portfolioPage" >
 			<div class="" id="portfolio">
 				<h4 class="innerHeading">Portfolio</h4>
 				<p>Some of my recently created work</p>
@@ -89,14 +116,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-10 col-md-offset-1 aboutPage">
+		<div class="col-md-8 col-md-offset-2 interestsPage">
 			<div class="" id="interests">
 				<h4 class="innerHeading">Interests</h4>
 				<p>I have owned a DSLR for quite a while now, but I haven't clicked a decent picture with it yet here's my insta</p>
 				<h4></h4>
 			</div>
 		</div>
-			<div class="col-md-10 col-md-offset-1 aboutPage">
+			<div class="col-md-8 col-md-offset-2 workPage">
 				<h4 class="innerHeading">Work Experience And Education</h4>
 				<p>Oct 2014 - Nov 2016</p>
 				<h4>Infosys Ltd. Bengaluru</h4>
@@ -104,7 +131,7 @@
 				<h4 class="innerHeading">Education</h4>
 				<p>Bachelor in Mechanical Egineering</p>
 	  	</div>
-	  	<div class="col-md-10 col-md-offset-1 aboutPage" id="contact">
+	  	<div class="col-md-8 col-md-offset-2 aboutPage" id="contact">
 				<h4>Contact Me / Hire Me</h4>
 	  	</div>
 	</div>
