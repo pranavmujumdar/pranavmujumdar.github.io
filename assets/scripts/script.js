@@ -121,20 +121,28 @@ function mobileNavbar(width){
   if(width > 960){
     $(window).scroll(parallax);
     $(window).scroll(navbarScrolling);
-  } else{
-    $('.landingcontent').css({
-      'position':'fixed'
+  } else if (width > 355 ){
+    $('.burgerdiv').css({
+      'margin-left': '5vw'
     });
-    $('.burgerspan').css({
-      'padding-left': '5vw'
+    $('.site-title').css({
+      'margin-left': '8vw',
+      'margin-right': '9vw'
+    });
+    $('.contact-me').css({
+      'margin-left': '3vw',
+    });
+    $(window).scroll(navbarScrolling);
+  } else {
+      $('.burgerdiv').css({
+      'margin-left': '5vw'
     });
     $('.site-title').css({
       'margin-left': '7vw',
-      'margin-right': '10vw'
+      'margin-right': '7vw'
     });
     $('.contact-me').css({
-      'margin-left': '5vw',
-      // 'margin-right': '5vw'
+      'margin-left': '3vw',
     });
     $(window).scroll(navbarScrolling);
   }
@@ -155,8 +163,14 @@ function navbarScrolling(){
   var wScroll = $(this).scrollTop();
   if (wScroll >= vwHeight*0.1265) {
       $('.myburger').addClass('sticky');
+      $('.burgerdiv div').css({
+        'background-color':'#000'
+      });
     } else {
         $('.myburger').removeClass('sticky');
+        $('.burgerdiv div').css({
+        'background-color':'#fff'
+      });
     }
     if(wScroll >= vwHeight*0.7594){
       $('.site-title').css({
@@ -184,7 +198,6 @@ function parallax(){
     'transform':'translate(0px , '+wScroll/2+'%)'
   });
 }
-
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";

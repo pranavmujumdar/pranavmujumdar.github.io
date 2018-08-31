@@ -18,22 +18,29 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 removegridmargins">
 		<section id="landing">
 			<div class="myburger">
-				<span class="burgerspan" onclick="openNav()">&#9776;</span>
+				<!-- <span class="burgerspan" onclick="openNav()">&#9776;</span> -->
+				<div class="burgerdiv" onclick="openNav()">
+					<div class="one"></div>
+					<div class="two"></div>
+					<div class="three"></div>
+				</div>
 				<div class="site-title">Pranav Mujumdar</div>
-				<div class="contact-me"><i class="fas fa-envelope"></i></div>
+				<div class="contact-me">
+					<a id="mail" href="mailto:psmujumdar@live.com"><i class="fas fa-envelope"></i></a>
+				</div>
 			</div>
 			<div class="container">
 				<div id="mySidenav" class="sidenav">
 					<ul class="">
-				 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
 			  	<a href="#about" id="logo" onclick="closeNav()">pM.</a>
 		    <li><a href="#about" onclick="closeNav()">About Me</a>
 		    </li>
-		    <li><a href="#skills" onclick="closeNav()">Skills</a>
+		    <li><a href="#about" onclick="closeNav()">Skills</a>
 		    </li>
-		    <li><a href="#interests" onclick="closeNav()">Portfolio</a>
+		    <li><a href="#portfolio" onclick="closeNav()">Portfolio</a>
 		    </li>
-		    <li><a href="#portfolio" onclick="closeNav()">Interests</a>
+		    <li><a href="#interests" onclick="closeNav()">Interests</a>
 		    </li>
 		    <li><a href="#contact" onclick="closeNav()">Contact Me</a>
 		    </li>
@@ -48,7 +55,9 @@
 				  </a>
 					</h3>
 					<div class="links">
-						<a href="https://github.com/pranavmujumdar" target="_blank"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/pranav-mujumdar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+						<a href="https://github.com/pranavmujumdar" target="_blank"><i class="fab fa-github"></i></a>
+						<a href="https://www.linkedin.com/in/pranav-mujumdar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+						<a id="mail" href="mailto:psmujumdar@live.com"><i class="fas fa-envelope"></i></a>
 					</div>
 				</div>
 			</div>
@@ -66,8 +75,8 @@
 				<p>HTML, CSS, JavaScript, jQuery, Node.js, Express Framework, MongoDB(Nosql DB), git version control</p>
 			</div>
 		</div>
-		<div class="col-sm-8 col-sm-offset-2 portfolioPage" >
-			<div class="" id="portfolio">
+		<div id="portfolio" class="col-sm-8 col-sm-offset-2 portfolioPage">
+			<div class="">
 				<h4 class="innerHeading">Portfolio</h4>
 				<p>Some of my recently created work</p>
 				<div>
@@ -80,8 +89,10 @@
 		<div class="col-sm-8 col-sm-offset-2 interestsPage">
 			<div class="" id="interests">
 				<h4 class="innerHeading">Interests</h4>
-				<p>I have owned a DSLR for quite a while now, but I haven't clicked a decent picture with it yet here's my insta</p>
-				<h4></h4>
+				<p>I like to click pictures sometimes, of random things and places</p>
+				<div>
+					<div class="instaImage"></div>
+				</div>
 			</div>
 		</div>
 			<div class="col-sm-8 col-sm-offset-2 workPage">
