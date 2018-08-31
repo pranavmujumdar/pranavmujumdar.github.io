@@ -41,6 +41,9 @@ html, body{
     font-size: 36px;
     margin-left: 50px;
 }
+.closebtn{
+	text-decoration: none;
+}
 
 .burgerspan{
 	padding-left: 20vw;
@@ -61,21 +64,23 @@ html, body{
     z-index: 10;
     color: black;
     background-color: white;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 .site-title{
 	text-align: center;
 	width: 58vw;
 	display: inline-block;
 	font-size: 1.5em;
-	visibility: hidden;
-	transition: 0.2s ease-in;
+	/*visibility: hidden;*/
+	opacity: 0;
+	transition: 0.1s ease-in-out;
 }
 .contact-me{ 
 	display: inline-block;
 	font-size: 1.5em;
-	visibility: hidden;
-	transition: 0.5s ease-in;
+	/*visibility: hidden;*/
+	opacity: 0;
+	transition: 0.2s ease-in-out;
 }
 
 @media screen and (max-height: 450px) {

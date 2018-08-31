@@ -122,6 +122,9 @@ function mobileNavbar(width){
     $(window).scroll(parallax);
     $(window).scroll(navbarScrolling);
   } else{
+    $('.landingcontent').css({
+      'position':'fixed'
+    });
     $('.burgerspan').css({
       'padding-left': '5vw'
     });
@@ -157,20 +160,20 @@ function navbarScrolling(){
     }
     if(wScroll >= vwHeight*0.7594){
       $('.site-title').css({
-        'visibility':'visible'
+        'opacity':'1'
       }); 
       } else {
         $('.site-title').css({
-          'visibility':'hidden'
+          'opacity':'0'
         });
       };
     if(wScroll >= vwHeight*0.50){
       $('.contact-me').css({
-        'visibility':'visible'
+        'opacity':'1'
       });
     } else {
       $('.contact-me').css({
-      'visibility':'hidden'
+      'opacity':'0'
     });
   } 
 }
