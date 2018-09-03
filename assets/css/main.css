@@ -7,7 +7,11 @@ html, body{
 	margin:0;
 	padding:0;
 }
-
+#overlap{
+	z-index: 3;
+	margin-bottom: 300px;
+	background-color: white;
+}
 .sidenav {
     height: 100%;
     width: 0;
@@ -171,14 +175,6 @@ h1{
 	text-shadow: 1px 0px 8px rgba(0,0,0,0.3),
 						0px 0 1px rgba(0,0,0,0.2);
 }
-.aboutPage{
-	/*position: relative;
-	background-color: pink;
-	top:10vh;
-	max-height: 50%
-	font-size: 1.1vw;*/
-	padding-top: 3%;
-}
 .portfolioPage{
 	padding-top: 3%;
 }
@@ -231,4 +227,30 @@ a:hover{
 	text-decoration: none;
 	font-size: 0.8em;
 }
-.
+.instaImage{
+	background-image: url('../images/insta.jpg');
+	width: 360px;
+	height: 480px;
+	background-size: cover;
+	overflow: hidden;
+}
+.tele{
+	color: white;
+	font-size: 2em;
+	padding-right: 10px;
+}
+.telephoneCTA{
+	color: white;
+	font-size: 4em;
+}
+#contact{
+	position: fixed;
+	bottom: 0;
+	padding-top: 2%;
+	text-align: center;
+	background-color: black;
+	color: white;
+	box-shadow: 600px 0 0 0 black,
+				-600px 0 0 0 black;
+	z-index: 0;
+}
