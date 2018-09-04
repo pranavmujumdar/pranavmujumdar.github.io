@@ -187,9 +187,6 @@ h1{
 .portfolioPage{
 	padding-top: 3%;
 	padding-bottom: 3%;
-	background-color: #b9baa3;
-	box-shadow: 600px 0 0 0 #b9baa3,
-					-600px 0 0 0 #b9baa3;
 }
 .innerHeading{
 	font-size: 3em;
