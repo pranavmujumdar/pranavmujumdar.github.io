@@ -194,6 +194,23 @@ h1{
 	text-shadow: 1px 0px 8px rgba(0,0,0,0.3),
 						0px 0 1px rgba(0,0,0,0.2);
 }
+.downarrow{
+	position: absolute;
+/*	background-color: pink;
+*/	font-size: 3em;
+	left: 48%;
+	top: 80vh;
+	transition: 0.4s ease-in-out;
+}
+.downarrow i{
+	color: lightgrey;
+	transition: 0.4s ease-in-out;
+}
+.downarrow:hover i{
+	color: white;
+	text-shadow: 1px 0px 8px rgba(0,0,0,0.3),
+						0px 0 1px rgba(0,0,0,0.2);
+}
 .portfolioPage{
 	padding-top: 3%;
 	padding-bottom: 3%;

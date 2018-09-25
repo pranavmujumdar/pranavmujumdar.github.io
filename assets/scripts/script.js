@@ -166,11 +166,17 @@ function navbarScrolling(){
       $('.burgerdiv div').css({
         'background-color':'#000'
       });
+       $('.downarrow').css({
+      'opacity':'0'
+      });
     } else {
         $('.myburger').removeClass('sticky');
         $('.burgerdiv div').css({
         'background-color':'#fff'
-      });
+        });
+        $('.downarrow').css({
+        'opacity':'1'
+        });
     }
     if(wScroll >= vwHeight*0.7594){
       $('.site-title').css({
