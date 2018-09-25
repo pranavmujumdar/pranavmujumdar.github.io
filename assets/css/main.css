@@ -243,9 +243,10 @@ a:hover{
 	text-decoration: none;
 	color: white;
 }
-#about{
+#about,#skills,#interests{
 	padding-top: 3%;
 }
+
 .portfolioWebsiteThumb{
 	/*width:427px;*/
 	width:427px;
@@ -332,6 +333,13 @@ a:hover{
 }
 #instaImg6{
 	background-image: url('../images/insta6.jpg');
+}
+#linkToCv{
+	color: steelblue;
+}
+#linkToCv:active{
+	color: steelblue;
+	text-decoration: none;
 }
 .tele{
 	color: white;
