@@ -198,9 +198,14 @@ h1{
 	position: absolute;
 /*	background-color: pink;
 */	font-size: 3em;
-	left: 48%;
+	left: 48vw;
 	top: 80vh;
 	transition: 0.4s ease-in-out;
+}
+@media screen and (max-width: 767px){
+	.downarrow{
+		left: 45vw;
+	}
 }
 .downarrow i{
 	color: lightgrey;
