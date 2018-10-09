@@ -1,4 +1,3 @@
-$(document).ready(function(){
   // Type animation script
   var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
@@ -160,7 +159,7 @@ function parallax(){
 
 
 
-})
+
 
 //close navbar on clicking
 // $('.navbar-collapse').click(function(){
