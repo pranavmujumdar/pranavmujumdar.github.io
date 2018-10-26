@@ -61,10 +61,11 @@ var scrollLink = $('.scroll');
 
 scrollLink.click(function(e){
   e.preventDefault();
-  $('body,html').animate({
+  $('html, body').animate({
     scrollTop: $(this.hash).offset().top
   }, 600)
 });
+
 
 
 var width=$(window).width();
