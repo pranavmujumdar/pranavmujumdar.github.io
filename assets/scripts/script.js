@@ -57,16 +57,16 @@ window.onload = function() {
 };
 
 //smooth scroll
+$(document).ready(function(){
 var scrollLink = $('.scroll');
 
 scrollLink.click(function(e){
-  e.preventDefault();
-  $('html, body').animate({
-    scrollTop: $(this.hash).offset().top
-  }, 600)
+    e.preventDefault();
+    $('html, body').animate({
+      scrollTop: $(this.hash).offset().top
+    }, 600)
+  });
 });
-
-
 
 var width=$(window).width();
 
