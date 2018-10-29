@@ -270,6 +270,20 @@ a:hover{
 .portfolioWebsiteThumb:hover{
 	opacity: 0.8;	
 }
+.rgbGameWebsiteThumb{
+	width:427px;
+	height:240px;
+	max-width: 90vw;
+	overflow-x: hidden;
+	border-radius: 10px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../images/rgbGameThumb.png');
+}
+.rgbGameWebsiteThumb:hover{
+	opacity: 0.8;
+}
 .fa-times{
 	text-decoration: none;
 	font-size: 0.8em;
