@@ -2,10 +2,22 @@
   percentage: 90
   color: danger
 
-- name: Go
+- name: Javascript
   percentage: 80
   color:
 
-- name: Python
-  percentage: 70
+- name: MEAN Stack
+  percentage: 80
+  color:  success
+
+- name: Java
+  percentage: 85
   color: dark
+
+- name: Python(+ ML Libraries)
+  percentage: 75
+  color:  
+
+- name: C# (for Unity Dev)
+  percentage: 75
+  color:
