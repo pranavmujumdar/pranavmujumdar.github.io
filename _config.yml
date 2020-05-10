@@ -1,7 +1,7 @@
 ### Site Settings ###
 title               : Pranav Mujumdar
 description         : >-
-                      "This now"
+                      "I write dodgy code initially, after a cup of tea I would certainly make it legible!"
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : pranavmujumdar/pranavmujumdar.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU
