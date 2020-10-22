@@ -1,7 +1,7 @@
 ### Site Settings ###
 title               : Pranav Mujumdar
 description         : >-
-                      "I write dodgy code initially, with enough tea, I would certainly make it legible!"
+                      "Web Dev and Game Dev are my two passions. Guitar and Tea are my two addictions. Learner | Fighter | Thinker | Creator"
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : pranavmujumdar/pranavmujumdar.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU
@@ -41,7 +41,7 @@ author:
 # twitch            : your_username
   twitter           : your_username
 # vimeo             : your_username
-# youtube           : your_channel_name
+  youtube           : Pranav Mujumdar
 
 
 ### Posts ###
