@@ -10,6 +10,14 @@
   percentage: 80
   color:  success
 
+- name: Angular 8
+  percentage: 80
+  color:  success
+
+- name: React
+  percentage: 60
+  color:  success
+
 - name: Java
   percentage: 85
   color: dark
