@@ -1,0 +1,63 @@
+---
+---
+.container {
+    width: 100% !important;
+    max-width: 80%;
+    font-weight: 2;
+}
+// .headerImage {
+//     background-image: url("https://source.unsplash.com/0aRycsfH57A/");
+//     filter: blur(1px);
+//     -webkit-filter: blur(1px);
+//     height: 300px;
+//     width: 1920px;
+//     position: absolute;
+//     z-index: 20;
+//     left: -400px;
+//     background-repeat: no-repeat;
+//     background-position: center;
+// }
+@media (max-width:1367px){
+    #header-bg {
+        background-color: #E63946;
+        height: 400px;
+        width: 1920px;
+        position: absolute;
+        z-index: -1;
+        left: -400px;
+    }    
+    #title {
+        font-size: 1rem;
+        padding-top: 32px;
+        // color: white;
+        text-align: center;
+    }
+}
+@media (max-width: 1920px){
+    #header-bg {
+        background-color: #E63946;
+        height: 400px;
+        width: 1920px;
+        position: absolute;
+        z-index: -1;
+        left: -400px;
+    }    
+    #title {
+        font-size: 5rem;
+        padding-top: 32px;
+        // color: white;
+        text-align: center;
+        color: white;
+        background-color: #E63946;
+    }
+}
+
+.DarkBlue{
+    color: #1D3557;
+}
+
+.theRed{
+    color: #E63946;
+}
+
+@import "portfolYOU";
