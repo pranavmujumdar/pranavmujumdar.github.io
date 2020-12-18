@@ -2,7 +2,7 @@
 ---
 .container {
     width: 100% !important;
-    max-width: 80%;
+    //max-width: 80%;
     font-weight: 2;
 }
 // .headerImage {
@@ -32,6 +32,9 @@
         // color: white;
         text-align: center;
     }
+    #linkedInTitle {
+        background-color: #2867B2;
+    }
 }
 @media (max-width: 1920px){
     #header-bg {
@@ -49,6 +52,14 @@
         text-align: center;
         color: white;
         background-color: #E63946;
+    }
+    #linkedInTitle {
+        background-color: #2867B2;
+        font-size: 5rem;
+        padding-top: 32px;
+        // color: white;
+        text-align: center;
+        color: white;
     }
 }
 
