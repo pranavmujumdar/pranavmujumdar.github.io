@@ -1,0 +1,404 @@
+---
+name: Autonomous Car Parking using Unity ML Agents 
+tools: [Unity, MLAgents, RL]
+image: "../assets/CarAi.jpg"
+description: Portfolio of a design sprint we ran through to efficiently connect recruiters with qualified candidates
+---
+<body>
+    <!-- <div id="header-bg"></div> -->
+    <h1 style="padding-bottom: 10px;" id="title">Autonomous Car Parking Simulator</br>
+      <span style="font-size: 4rem;">using Unity MLAgents</span>
+    </h1>
+    <h2 style="text-align: center;">
+        How do we simulate an AI to find a parking spot? </br> and then park the car?
+    </h2>
+    <h2 class="DarkBlue">
+        Problem Statement
+    </h2>
+    <p>The problem is simple, there's a car in a parking lot, and there is a parking spot at a random position and the Job of the AI is to find the parking spot in it <em>maybe</em> there is a person walking by so the AI has to make sure it avoids hitting the person, as well as avoiding hitting other parked cars</p>
+    <em>This seems like a perfect case for reinforcement learning and Unity can even help us simulate the environment and look at it in real time to see the AI park the car avoiding the obstacles</em>
+    
+    <h2 class="DarkBlue" >Environment Setup</h2>
+    <p>Using a few free assets from the unity asset store I found this <a href="https://assetstore.unity.com/packages/3d/vehicles/land/simple-cars-pack-97669">simple vehicle pack</a> once I had the basic things ready I created the environment that looks like this</p>
+    <div class="row justify-content-center">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/CarEnvironment.png" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Parking Lot Environment</figcaption>
+      </figure>
+    </div>
+
+    <h4 class="DarkBlue">Overview of the environment</h4>
+    <p>
+        The environment consists of a parking lot with certain cars, already parked, and the agent car that is looking for a parking spot. To ensure there is not one specific parking spot that is available or vacant, I have randomized the spot and other parked cars, as well as the agent car that requires to be spawned in different positions of the parking lot and in different orientations as well.
+    </p>
+    
+    <p><em>Note: All the cars and the vacant spots are generated randomly with a chance of 85% that the spot will be occupied. So, there might be some episodes where there are no vacant spots in the lot, which encourages the agent to look through the whole parking lot for the spot.</em></p>
+
+    <h4 class="DarkBlue">Building the environment</h4>
+    <ul>
+        <li>
+            Parking Area
+        </li>
+        <p>
+          I created the parking lot which is a square shaped plane with walls on the sides, the area has multiple spawn positions, for randomly spawning the parked cars and the agent car, using script, ParkingArea.cs
+        </p>
+        <em>Script Description</em>
+        <ul>
+            <li>
+                randomSpawnCarsAndParking()
+                This method helps randomly spawning either a car or a parking on the positions marked in blue diamonds in the above image
+            </li>
+            <li>
+                clearParking()
+                This method allows the area to be cleared for next random spawning once the episode ends
+            </li>
+            <li>
+                resetArea() 
+                This method is created to call the above two functions one after the other from the agent script
+            </li>
+        </ul>
+        <li>
+            Car Setting
+        </li>
+        <p>This script contains the variable for margin multiplication where the agent car would spawn, the larger the margin the more difficult it is to train, as the agent car would spawn randomly at different locations</p>
+        <li>
+          Collision Detection Scripts
+        </li>
+        This script contains the variable for margin multiplication where the agent car would spawn, the larger the margin the more difficult it is to train, as the agent car would spawn randomly at different locations
+        <ul>
+          <li>
+              obstacleDetect.cs
+              <p>This script will detect when the agent car collides with any of the spawned parked cars, and call the hitACar() method inside the agent script</p> 
+          </li>
+          <li>
+              wallDetect.cs
+              <p>This script will detect when the agent car collides with the side walls of the parking lot and call the hitAWall() method inside the agent script</p>
+          </li>
+          <li>
+              parkingDetect.cs
+              <p>This script will detect when the agent car properly finds the empty parking spot and drives to it. It will call the parked() method inside the agent script</p>
+          </li>
+      </ul>
+    </ul>
+    <h4 class="DarkBlue">Configuring the Agent</h4>
+    <p>
+      This is our agent car, the car that needs to find its parking spot. For making sure the car behaves the way it should, I apply following build:
+    </p>
+      <div class="row justify-content-center">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture2.png" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Agent car</figcaption>
+        </figure>
+      </div>
+    <p>I added wheel colliders onto the front wheels of the car to enable real like driving ability to the car</p>
+      <div class="row justify-content-center">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture3.png" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Agent car</figcaption>
+        </figure>
+      </div>
+    <ul>
+      <li>
+        Steer Wheels: The two wheels in front will be able to have the steering ability 
+      </li>
+      <li>
+        Driving Wheels: Considering the car is front wheel drive car I add the driving ability to the front wheels as well. Adding a box collider on the car, with a rigid body that weighs around 1500kg, just to make the car behave realistically.
+      </li>
+      <li>Adding Ray Perception Sensors</li>
+      <p>
+        Added 3-dimensional ray perception sensors onto the car, in the front and in the back, which would be able to sense objects in 10m range. 
+      </p>
+      <div class="row justify-content-center">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture4.png" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Ray Perception Sensors</figcaption>
+        </figure>
+      </div>
+      <li>Behaviour Parameters
+        <ul>
+          <li>
+            Vector Action Space Type: 
+            <p>
+              Since this is a case where the agent should be able to partially steer the car, we will be keeping the vector actions continuous 
+            </p>
+          </li>
+          <li>
+            Vector action Space Size: 2
+            <p>
+              The car can either go forward or reverse which constitutes as one action space. Also, the car can turn left or right, which constitutes as one action space. Hence, we use two as the vector action space size.
+            </p>
+          </li>
+          <li>
+            Decision requester:
+            <p>
+              We keep the decision period to 5 as we don’t want the AI to make a decision before every action. And we also allow the AI to take actions between decisions.
+            </p> 
+          </li>
+        </ul>
+      </li>
+      <li>
+        Agent Script (carAgent.cs)
+        <p>
+          Now we can go ahead and write the agent script 
+          Following are the important functions we defined in the script
+          <ul>
+            <li>
+              GetRandomSpawnPos()
+              <p>
+                Get a random Spawn position for the agent car in the center area of the parking lot depending upon the spawn area margin multiplier
+              </p>
+            </li>
+            <li>
+              hitACar()
+              <p>
+                Punishing the agent for hitting another parked car, we add a reward of -0.1f
+              </p>
+            </li>
+            <li>
+              hitAWall()
+              <p>
+                Punishing the agent for hitting the wall of the parking lot, we add a reward of -0.1f
+              </p>
+            </li>
+            <li>
+              hitAHuman()
+              <p>
+                Punishing the agent for hitting the human walking by, we add a reward of -0.3f
+              </p>
+            </li>
+            <li>
+              parked()
+              <p>
+                Positive reward (+5.0f) for finding the empty parking spot 
+              </p>
+            </li>
+            <li>
+              OnActionReceived()
+            </li>
+            <p>
+              When we receive an action from the agent, we call the moveAgent method, also we add penalty to make sure the agent improves and tries to perform in least number of actions
+            </p>
+            <li>
+              moveAgent(): 
+              <p>
+                This function actually drives the car, depending upon the action received, this method will steer and accelerate the car. 
+              </p>
+            </li>
+            <li>
+              OnEpisodeBegin(): 
+            </li>
+            <p>
+              Every episode needs to maintain standard values for making sure the AI learns properly, like the car should be stationary at the beginning, so we remove all the forces from the previous episodes. Also, we need to reset the area and randomly spawn the parked cars, and the empty parking spots, which we can do using this function.
+            </p>
+          </ul>
+        </p>
+      </li>
+      <p>
+        <em>Note: Please refer to the script, CarAgent.cs, (path: \CarParking\Assets\Scripts\CarAgent.cs) it is commented with all the details about the functions</em>
+      </p>
+    </ul>
+
+    <h4 class="DarkBlue">Training the Agent</h4>
+    <p>
+      Now that I have configured the agent and the environment, I can move onto the training phase, we need to train this for a significant amount of time so we want to create multiple instances of the environment, so I created about 12 instances  
+    </p>
+    <div class="row justify-content-center">
+      <figure class="figure">
+        <img class="figure-img img-fluid rounded"  src="../assets/Picture5.png" alt="Parking lot Environment">
+        <figcaption class="figure-caption text-center">Multiple Instances of the environment for faster training</figcaption>
+      </figure>
+    </div>
+    <h5>Hyperparameters for PPO</h5>
+    <pre>default:
+      trainer: ppo
+      batch_size: 1024
+      beta: 5.0e-3
+      buffer_size: 10240
+      epsilon: 0.2
+      hidden_units: 128
+      lambd: 0.95
+      learning_rate: 3.0e-4
+      learning_rate_schedule: linear
+      max_steps: 5.0e5
+      memory_size: 128
+      normalize: false
+      num_epoch: 3
+      num_layers: 2
+      time_horizon: 64
+      sequence_length: 64
+      summary_freq: 10000
+      use_recurrent: false
+      vis_encode_type: simple
+      reward_signals:
+          extrinsic:
+              strength: 1.0
+              gamma: 0.99
+      summary_freq: 30000
+      time_horizon: 512
+      batch_size: 512
+      buffer_size: 2048
+      hidden_units: 256
+      num_layers: 3
+      beta: 1.0e-2
+      max_steps: 1.0e7
+      num_epoch: 3
+      reward_signals:
+          extrinsic:
+              strength: 1.0
+              gamma: 0.99
+          curiosity:
+              strength: 0.02
+              gamma: 0.99
+              encoding_size: 256
+      </pre>
+      <p>
+        I added extrinsic reward and curiosity to the agent, so that it will explore a bit more in the parking lot. With gamma as 0.99 the curiosity and the reward diminish every time.
+      </p>
+      <h5>Training Using Generative Adversarial Imitation Learning(GAIL):</h5>
+      <p>
+      For the AI to understand the environment early on, we can provide some demos, so I decided to record 100 demo instances to provide our AI. I played a 100 episode and provided the recorded model for learning by adding its path to the PPO hyperparameters while training.
+      </p>
+      <pre>
+      gail:
+        strength: 0.02
+        gamma: 0.99
+        encoding_size: 128
+        use_actions: true
+        demo_path: ../demos/ExpertParker.demo
+      </pre>
+      <div class="row justify-content-center">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/2020-12-19 17-49-13.gif" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Training at timescale=1</figcaption>
+        </figure>
+      </div>
+      <h4 class="DarkBlue">Results</h4>
+      <p>
+        I trained the agent for 10M episodes, here is a short clip of the inference of the trained Ai 
+      </p>
+      <div class="row justify-content-center">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/CarParking-NewParking-PC-Mac-Lin.gif" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Running Inference with the trained Ai</figcaption>
+        </figure>
+      </div>
+      <div class="row justify-content-center">
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture6.svg" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Environment Cumulative Reward</figcaption>
+        </figure>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture8.svg" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Parking Environment Episode Length</figcaption>
+        </figure>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture9.svg" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Policy Value Loss</figcaption>
+        </figure>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture10.svg" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Policy Extrinsic Reward</figcaption>
+        </figure>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture11.svg" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Policy Extrinsic Value Estimate</figcaption>
+        </figure>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded"  src="../assets/Picture12.svg" alt="Parking lot Environment">
+          <figcaption class="figure-caption text-center">Policy GAIL Reward</figcaption>
+        </figure>
+      </div>
+    
+      <h5>Analysis of the results</h5>
+      <ul>
+
+        <li>Cumulative Reward
+          <p>It the agent is training this should be increasing, as the agent will find the parking more efficiently</p>
+          <li>
+            After 30K Steps
+            <ul>
+              <li>
+                Training 1: 0.2871 
+              </li>
+              <li>
+                Training 2: 0.08488
+              </li>
+            </ul>
+          </li>
+          <li>
+            After 9.99M Steps
+            <ul>
+              <li>
+                Training 1: 3.252
+              </li>
+              <li>
+                Training 2: 4.29
+              </li>
+            </ul>
+          </li>
+        </li>
+
+        <li>Episode Length
+          <p>Should be decreasing, which would mean that the AI is finding the parking spot faster</p>
+          <li>
+            After 30K Steps
+            <ul>
+              <li>
+                Training 1: 840.2
+              </li>
+              <li>
+                Training 2: 896.2
+              </li>
+            </ul>
+          </li>
+          <li>
+            After 9.99M Steps
+            <ul>
+              <li>
+                Training 1: 370
+              </li>
+              <li>
+                Training 2: 179.1
+              </li>
+            </ul>
+          </li>
+        </li>
+
+        <li>
+          Value Loss
+          <p>
+            Correlates to how well the model is able to predict the value of each state. This should increase while the agent is learning, as the policy that it created keeps changing after each and every episode and then decrease once the reward stabilizes, which means that the policy is pretty good at taking actions and is getting the expected rewards at the states. We can train this agent for even longer time, as the value loss hasn’t decreased significantly
+          </p> 
+        </li>
+        <li>
+          Policy Extrinsic Value Estimate
+          <p>
+            The mean value estimate for all states visited by the agent. Should increase during a successful training session
+          </p>
+        </li>
+        
+        <li>
+          GAIL Reward
+          <p>
+            Should decrease, as the AI stopped taking inference from our demonstrations and learned on his own
+          </p>
+        </li>
+
+        <li>
+          Learning rate
+          <p>
+            How large a step the training algorithm takes as it searches for the optimal policy. Should decrease over time. Coincides for both the trainings.
+          </p>
+        </li>
+
+      </ul>
+      <h4 class="DarkBlue">Conclusion</h4>
+      <ul>
+        <li>
+          Training time can be increased: Currently ran for 10M cycles and took about 11 hours on an i5 4th generation processor
+        </li>
+        <li>
+          Sensors can be added in left and right as well for the agent to get better understanding of the Environment, it currently can not "see" on its left and right and hence sometimes the human walking back and forth crashes onto it, confusing it as to why it got punished and that might change the policy in a weird way, because it won't be able to understand that it is cutting off a human walking 
+        </li>
+      </ul>
+</body>
