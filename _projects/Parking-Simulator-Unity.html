@@ -16,10 +16,18 @@ description: Portfolio of a design sprint we ran through to efficiently connect 
         Problem Statement
     </h2>
     <p>The problem is simple, there's a car in a parking lot, and there is a parking spot at a random position and the Job of the AI is to find the parking spot in it <em>maybe</em> there is a person walking by so the AI has to make sure it avoids hitting the person, as well as avoiding hitting other parked cars</p>
-    <em>This seems like a perfect case for reinforcement learning and Unity can even help us simulate the environment and look at it in real time to see the AI park the car avoiding the obstacles</em>
+    <p>
+      <em>This seems like a perfect case for reinforcement learning and Unity can even help us simulate the environment and look at it in real time to see the AI park the car avoiding the obstacles</em>
+    </p>
+    <p class="text-center">
+      <a href="https://github.com/pranavmujumdar/CarParkingAi">Link to the Github repo</a>
+    </p>
+    <p class="text-center">
+      <a href="https://northeastern.zoom.us/rec/share/jk_2eJj4yNoxpFcURpUijPZ-d1ygxIiiTjTGfeo7X4fL9mkMTVdAAjtKXLqp8c20.W3skka1QrKzvKwUZ?startTime=1608426409000">Link to the video walkthrough of the project</a>
+    </p>
     
     <h2 class="DarkBlue" >Environment Setup</h2>
-    <p>Using a few free assets from the unity asset store I found this <a href="https://assetstore.unity.com/packages/3d/vehicles/land/simple-cars-pack-97669">simple vehicle pack</a> once I had the basic things ready I created the environment that looks like this</p>
+    <p>Using a few free assets from the unity asset store I found this <a href="https://assetstore.unity.com/packages/3d/vehicles/land/simple-cars-pack-97669">simple vehicle pack</a> and this <a href="https://assetstore.unity.com/packages/3d/characters/humanoids/humans/simple-modular-human-100162">simple human asset</a> once I had the basic assets gathered and ready I created the environment that looks like this</p>
     <div class="row justify-content-center">
         <figure class="figure">
           <img class="figure-img img-fluid rounded"  src="../assets/CarEnvironment.png" alt="Parking lot Environment">
@@ -198,7 +206,7 @@ description: Portfolio of a design sprint we ran through to efficiently connect 
       </p>
     </ul>
 
-    <h4 class="DarkBlue">Training the Agent</h4>
+    <h2 class="DarkBlue">Training the Agent</h2>
     <p>
       Now that I have configured the agent and the environment, I can move onto the training phase, we need to train this for a significant amount of time so we want to create multiple instances of the environment, so I created about 12 instances  
     </p>
@@ -309,7 +317,7 @@ description: Portfolio of a design sprint we ran through to efficiently connect 
         </figure>
       </div>
     
-      <h5>Analysis of the results</h5>
+      <h2>Analysis of the results</h2>
       <ul>
 
         <li>Cumulative Reward
@@ -392,10 +400,10 @@ description: Portfolio of a design sprint we ran through to efficiently connect 
         </li>
 
       </ul>
-      <h4 class="DarkBlue">Conclusion</h4>
+      <h2 class="DarkBlue">Conclusion</h2>
       <ul>
         <li>
-          Training time can be increased: Currently ran for 10M cycles and took about 11 hours on an i5 4th generation processor
+          Can be trained for more episodes: Even though it's converging at about 4M with good enough results, it still sometimes crashes on to sa human or a parked car, Currently ran for 10M cycles and took about 11 hours on an i5 4th generation processor
         </li>
         <li>
           Sensors can be added in left and right as well for the agent to get better understanding of the Environment, it currently can not "see" on its left and right and hence sometimes the human walking back and forth crashes onto it, confusing it as to why it got punished and that might change the policy in a weird way, because it won't be able to understand that it is cutting off a human walking 
