@@ -1,13 +1,26 @@
+- title: UX Engineer at Addgene
+  from: Jan 2022
+  to: Present
+  description: Currently contributing as a UX engineer to the codebases for Django and ReactJs for Addgene's different products. I like working on migrating older pages to a newer more accessible designs for our Lab
+              Inventory Management System, which is a smaller ongoing project we have ongoing to improve the product, as it involves understanding code in conjunction with user interviews to solve the porblem, which is rarely the case. 
+
+- title: UI developer Co-op at Addgene
+  from: Jan 2021
+  to: Sep 2021
+  description: Contibuted as a UI developer to the code base working on Django. Being a member of the product team worked on the intro to lab bench project,
+               which involved the textbook design process to create pages that the curation team could use to publish new video content without the intervention of the dev team.
+               Translated the designs from figma to code myself by creating django plugins that the curation team can easily use. Learned a great deal about software development and writing unit tests.
+
 - title: Grad Student, Northeastern Information Systems
-  from: 2019
-  to: present
+  from: Aug 2019
+  to: Dec 2021
   description: Learning to be a better and disciplined programmer, with completed courses like Web design and User Experience engineering, 
               Application Engineering and Development, 
               Data Science Engineering tools and methods, Building Virtual Environments, I have managed to get an A in the later ones, and A- in the other two
 
 - title: Pro Customer Experience Technician, Northeastern IT Services (Part-time)
-  from: 2019
-  to: present
+  from: Jan 2020
+  to: Dec 2021
   description: Working part time with the University's IT Services team, weekly tasks include troubleshooting users' technical issues,
               Part of the Training Team, training new recruits, creating Technical SOPs, regular interactions with users, I thoroughly enjoy talking to Users
               especially during these tough times  
