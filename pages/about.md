@@ -8,7 +8,7 @@ weight: 3
 # **About Me**
 
 Hi I am **{{ site.author.name }}** :wave:,<br>
-I am a Software Engineer, with more inclination towards design, I would spend my days writing code, however as the sun sets you'll find me sketching and playing guitar. I code for Web Dev on MEAN and MERN and for Game dev. I like to fiddle with Reinforcement learning by simulating real world scenarios. I also write in an attempt to assign a value to the null variable inside me.
+I am a UX Engineer, I write code in ReactJS and Django for my work at <a href="https://www.addgene.org/" target="_blank" rel="noopener">Addgene</a>, and as a member of the product team I work on various design projects to create mock-ups and wireframes using Figma. My evenings are spent cooking and practicing guitar. On weekends, you'll find me one-wheeling around Jamaica Plain or in an improv session if there is one nearby.
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}

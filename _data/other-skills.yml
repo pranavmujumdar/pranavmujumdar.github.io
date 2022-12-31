@@ -1,3 +1,11 @@
+- name: Figma
+  percentage: 90
+  color: success
+
+- name: Balsamiq Mockups
+  percentage: 90
+  color: success
+
 - name: Adobe Photoshop
   percentage: 80
   color: info
@@ -6,18 +14,14 @@
   percentage: 80
   color: info
 
-- name: Figma
-  percentage: 80
-  color: info
-
 - name: Adobe Illustrator
   percentage: 80
-  color: success
+  color: dark
 
 - name: Unity Engine
   percentage: 70
   color: dark
 
 - name: Guitar
-  percentage: 50
-  color: danger
+  percentage: 60
+  color: info
